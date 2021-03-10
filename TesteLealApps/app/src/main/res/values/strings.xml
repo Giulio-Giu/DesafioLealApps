@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">TesteLealApps</string>
     <string name="splash_img_logo_descpt">Logo com texto escrito Leal Apps Fitness</string>
+    <string name="login_hint_email">Email</string>
+    <string name="login_hint_password">Senha</string>
+    <string name="login_btn_enter">Entrar</string>
+    <string name="login_message_no_account">Ainda não tem conta?</string>
+    <string name="login_do_register">Cadastre-se</string>
 </resources>
