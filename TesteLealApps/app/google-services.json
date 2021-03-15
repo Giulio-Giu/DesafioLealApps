@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "655976064080",
+    "project_id": "testelealapps2021",
+    "storage_bucket": "testelealapps2021.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:655976064080:android:22c8102ba259c9b9c61d55",
+        "android_client_info": {
+          "package_name": "com.br.testelealapps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "655976064080-8043f30h9v75qgjcvse055h6jppd1u1d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMfC1GTMcyYRxCEicTmI-aDv7IC4sY8n0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "655976064080-8043f30h9v75qgjcvse055h6jppd1u1d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

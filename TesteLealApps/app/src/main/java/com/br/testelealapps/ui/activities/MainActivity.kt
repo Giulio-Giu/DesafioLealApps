@@ -9,19 +9,21 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.br.testelealapps.R
+import com.br.testelealapps.models.Treino
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     private var sharedPreferencesGlobal: SharedPreferences? = null
+    companion object {
+        var listTreino = mutableListOf<Treino>()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val sharedPreferences = getSharedPreferences(getString(R.string.preferences_name), Context.MODE_PRIVATE)
 
-        sharedPreferencesGlobal = sharedPreferences
 
 //        val adapter = CarAdapter(cars(), this)
 //

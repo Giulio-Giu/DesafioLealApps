@@ -1,7 +1,7 @@
 package com.br.testelealapps.app
 
 import android.app.Application
-import com.br.testelealapps.models.Account
+import com.google.firebase.auth.FirebaseUser
 
 class TesteApp() : Application() {
 
@@ -12,7 +12,7 @@ class TesteApp() : Application() {
 
     companion object {
 
-        var account: Account? = null
+        var account: FirebaseUser? = null
 
         private var instance: TesteApp? = null
 

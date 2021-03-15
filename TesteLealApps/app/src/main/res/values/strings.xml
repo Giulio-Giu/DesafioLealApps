@@ -4,6 +4,10 @@
     <string name="account_filename">account</string>
     <string name="account_key_user_data">userData</string>
 
+    <!-- General -->
+    <string name="ok">OK</string>
+    <string name="error">Erro</string>
+
     <!--  MainActivity -->
     <string name="main_title">Treinos</string>
 
@@ -16,4 +20,9 @@
     <string name="login_btn_enter">Entrar</string>
     <string name="login_text_no_account">Ainda não tem conta?</string>
     <string name="login_text_do_register">Cadastre-se</string>
+    <string name="login_validation_error_message">Email e/ou senha não foram preenchidos corretamente!</string>
+    <string name="login_auth_error_message">Ocorreu erro, por favor tente novamente!</string>
+
+    <!--  RegisterActivity -->
+    <string name="register_error_message">Ocorreu erro, por favor tente novamente!</string>
 </resources>
