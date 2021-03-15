@@ -1,11 +1,13 @@
 package com.br.testelealapps.ui.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import androidx.appcompat.app.AppCompatActivity
 import com.br.testelealapps.R
+import com.br.testelealapps.helpers.SharedPreferencesHelper
+import com.br.testelealapps.models.Account
 
 class SplashActivity : AppCompatActivity() {
 
@@ -15,12 +17,33 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        gotoMain()
+        val json = SharedPreferencesHelper.readString(
+            context = this,
+            filename = getString(R.string.account_filename),
+            key = getString(R.string.account_key_user_data)
+        )
+
+        if (json == null) {
+            goToLogin()
+        } else {
+            val account = Account()
+            account.parseJSON(json)
+            goToMain(account)
+        }
     }
 
-    private fun gotoMain() {
+    private fun goToMain(account: Account) {
+        //do login and go to main
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }, delayMillis)
+    }
+
+    private fun goToLogin() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }, delayMillis)

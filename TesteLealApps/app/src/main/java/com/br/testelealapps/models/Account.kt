@@ -4,11 +4,8 @@ import org.json.JSONObject
 
 class Account {
 
-    var name: String = ""
     var email: String = ""
     var password: String = ""
-    var token: String = ""
-    var avatar: String = ""
 
     fun getJSON(): JSONObject {
         val json = JSONObject()
