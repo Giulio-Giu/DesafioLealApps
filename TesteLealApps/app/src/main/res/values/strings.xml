@@ -7,9 +7,12 @@
     <!-- General -->
     <string name="ok">OK</string>
     <string name="error">Erro</string>
+    <string name="success">Sucesso</string>
+    <string name="btn_save">Salvar</string>
 
     <!--  MainActivity -->
     <string name="main_title">Treinos</string>
+    <string name="main_btn_logut">Sair</string>
 
     <!--  SplashActivity -->
     <string name="splash_img_logo_descpt">Logo com texto escrito Leal Apps Fitness</string>
@@ -25,4 +28,35 @@
 
     <!--  RegisterActivity -->
     <string name="register_error_message">Ocorreu erro, por favor tente novamente!</string>
+    <string name="register_hint_name">Nome</string>
+    <string name="register_hint_email">Email</string>
+    <string name="register_hint_password">Senha</string>
+    <string name="register_hint_confirm_password">Confirme a senha</string>
+    <string name="register_btn_enter">Cadastrar</string>
+    <string name="register_btn_back">Cancelar</string>
+
+    <!--  TreinoActivity -->
+    <string name="treino_title">Novo Treino</string>
+    <string name="treino_name_title">Nome:</string>
+    <string name="treino_description_title">Descrição:</string>
+    <string name="treino_name_hint">1</string>
+    <string name="treino_description_hint">Treino Teste</string>
+    <string name="treino_validation_error_message">Preencha os campos corretamente!</string>
+    <string name="treino_data_title">Data:</string>
+    <string name="treino_data_hint">01/01/2001</string>
+    <string name="treino_success_message">Treino adicionado com sucesso!</string>
+
+    <!--  ExercicioActivity -->
+    <string name="exercicio_title">Novo Exercício</string>
+    <string name="exercicio_name_title">Nome:</string>
+    <string name="exercicio_photo_title">Url da Imagem:</string>
+    <string name="exercicio_comments_title">Observações:</string>
+    <string name="exercicio_name_hint">1</string>
+    <string name="exercicio_comments_hint">Este Exercício deve ser feito em casa…</string>
+    <string name="exercicio_photo_hint">https://imgur.com/a/MelykfX</string>
+    <string name="exercicio_validation_error_message">Preencha os campos corretamente!</string>
+    <string name="exercicio_success_message">Exercício adicionado com sucesso!</string>
+
+    <!-- TreinoDetailActivity -->
+    <string name="treino_detail_title">Title: %1$s</string>
 </resources>

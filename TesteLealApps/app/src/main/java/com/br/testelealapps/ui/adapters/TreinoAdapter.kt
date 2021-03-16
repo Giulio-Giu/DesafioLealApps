@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.br.testelealapps.R
 import com.br.testelealapps.models.Treino
 
-class TreinoAdapter(private val treinos: ArrayList<Treino>, private val context: Context) :
+class TreinoAdapter(private val treinos: MutableList<Treino>, private val context: Context) :
     RecyclerView.Adapter<TreinoAdapter.ViewHolder>() {
 
     var clickListener: ClickListener? = null

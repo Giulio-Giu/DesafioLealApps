@@ -3,7 +3,6 @@ package com.br.testelealapps.ui.activities
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.afollestad.materialdialogs.MaterialDialog
 import com.br.testelealapps.R
@@ -11,15 +10,15 @@ import com.br.testelealapps.app.TesteApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_register.*
 
-class LoginActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_register)
 
         configureListeners()
 
@@ -27,14 +26,12 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun configureListeners() {
-        btn_login.setOnClickListener {
-            val email = et_login_email.text.trim().toString()
-            val password = et_login_password.text.trim().toString()
+        btn_register.setOnClickListener {
+            val email = et_register_email.text.trim().toString()
+            val password = et_register_password.text.trim().toString()
 
-            if (android.util.Patterns.EMAIL_ADDRESS.matcher(email)
-                    .matches() && password.isNotEmpty()
-            ) {
-                doLogin(email, password)
+            if (android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() && password.isNotEmpty()) {
+                createAccount(email, password)
             } else {
                 MaterialDialog.Builder(this)
                     .title(getString(R.string.error))
@@ -44,8 +41,8 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        tv_login_do_register.setOnClickListener {
-            goToRegister()
+        btn_back.setOnClickListener {
+            finish()
         }
     }
 
@@ -53,19 +50,19 @@ class LoginActivity : AppCompatActivity() {
         super.onStart()
     }
 
-    private fun doLogin(email: String, password: String) {
+    private fun createAccount(email: String, password: String) {
+        Log.d(TAG, "createAccount:$email")
 
-        Log.d(TAG, "signIn:$email")
-        auth.signInWithEmailAndPassword(email, password)
+        auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Log.d(TAG, "signInWithEmail:success")
+                    Log.d(TAG, "createUserWithEmail:success")
                     TesteApp.account = auth.currentUser
                     goToMain()
                 } else {
-                    MaterialDialog.Builder(this@LoginActivity)
+                    MaterialDialog.Builder(this@RegisterActivity)
                         .title(getString(R.string.error))
-                        .content(getString(R.string.login_auth_error_message))
+                        .content(getString(R.string.register_error_message))
                         .positiveText(getString(R.string.ok))
                         .show()
                 }
@@ -76,11 +73,6 @@ class LoginActivity : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
-    }
-
-    private fun goToRegister() {
-        val intent = Intent(this, RegisterActivity::class.java)
-        startActivity(intent)
     }
 
     companion object {

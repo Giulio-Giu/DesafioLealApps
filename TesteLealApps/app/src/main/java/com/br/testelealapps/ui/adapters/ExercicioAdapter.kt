@@ -11,7 +11,7 @@ import com.br.testelealapps.R
 import com.br.testelealapps.models.Exercicio
 import com.bumptech.glide.Glide
 
-class ExercicioAdapter(private val exercicios: ArrayList<Exercicio>, private val context: Context) :
+class ExercicioAdapter(private val exercicios: MutableList<Exercicio>, private val context: Context) :
     RecyclerView.Adapter<ExercicioAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

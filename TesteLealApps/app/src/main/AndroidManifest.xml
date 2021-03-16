@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.br.testelealapps">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".ui.activities.TreinoDetailActivity"></activity>
+        <activity
+            android:name=".ui.activities.ExercicioActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.TreinoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.TreinoDetailActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activities.LoginActivity"
             android:screenOrientation="portrait" />
